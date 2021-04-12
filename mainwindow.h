@@ -19,6 +19,12 @@ public:
   ~MainWindow();
   Delivery DeliveryLogic;
 
+private slots:
+  void on_calculatePricaPushButton_clicked();
+  void checkUserInput(QString fromCountry, QString toCountry, QString transport);
+
+  void on_freightPushButton_clicked();
+
 private:
   Ui::MainWindow* ui;
 };

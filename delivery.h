@@ -6,11 +6,13 @@
 
 class Delivery
 {
+private:
+  int TransportPrice;
+  int CountryPrice;
+
 public:
   Delivery(int transport, int country);
   Delivery();
-  int TransportPrice;
-  int CountryPrice;
   int GetSumOfDelivery();
   Country ToCountry;
   Country FromCountry;

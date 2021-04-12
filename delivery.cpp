@@ -1,5 +1,5 @@
 #include "delivery.h"
-
+#include <math.h>
 Delivery::Delivery(int transport, int country)  //: ToCountry(0, 0), FromCountry(0, 0), Transport()
 {
   this->TransportPrice = transport;
@@ -11,6 +11,9 @@ Delivery::Delivery()
 
 int Delivery::GetSumOfDelivery()
 {
-  return FromCountry.Latitude * CountryPrice + ToCountry.Latitude * CountryPrice +
-         FromCountry.Longitude * CountryPrice + ToCountry.Longitude * CountryPrice + Transport.power * TransportPrice;
+  if (FromCountry.Latitude == ToCountry.Latitude && FromCountry.Longitude == ToCountry.Longitude)
+    return 0;
+  return std::abs((FromCountry.Latitude + ToCountry.Latitude + FromCountry.Longitude + ToCountry.Longitude) *
+                      CountryPrice +
+                  Transport.power * TransportPrice);
 }

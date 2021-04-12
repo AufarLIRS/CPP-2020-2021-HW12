@@ -11,17 +11,17 @@ protected:
   friend class Delivery;
 };
 
-class Plane : private Transport
+class Plane : public Transport
 {
 public:
   Plane();
 };
-class Truck : private Transport
+class Truck : public Transport
 {
 public:
   Truck();
 };
-class Ship : private Transport
+class Ship : public Transport
 {
 public:
   Ship();
