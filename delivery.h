@@ -3,17 +3,13 @@
 
 #include "transport.h"
 #include "country.h"
-
-class Delivery
+#include "paymentapi.h"
+class Delivery : PaymentAPI
 {
-private:
-  int TransportPrice;
-  int CountryPrice;
-
 public:
-  Delivery(int transport, int country);
+  Delivery(int transportPrice, int countryPrice);
   Delivery();
-  int GetSumOfDelivery();
+  int GetSum();
   Country ToCountry;
   Country FromCountry;
   Transport Transport;

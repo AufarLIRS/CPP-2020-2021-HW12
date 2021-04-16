@@ -1,19 +1,20 @@
 #include "delivery.h"
 #include <math.h>
-Delivery::Delivery(int transport, int country)  //: ToCountry(0, 0), FromCountry(0, 0), Transport()
+#include <vector>
+Delivery::Delivery(int transport, int country) : Delivery()
 {
-  this->TransportPrice = transport;
-  this->CountryPrice = country;
+  koefficients[0] = transport;
+  koefficients[1] = country;
 }
 Delivery::Delivery()
 {
+  koefficients = std::vector<int>(2, 0);
 }
 
-int Delivery::GetSumOfDelivery()
+int Delivery::GetSum()
 {
-  if (FromCountry.Latitude == ToCountry.Latitude && FromCountry.Longitude == ToCountry.Longitude)
+  if (FromCountry == ToCountry)
     return 0;
-  return std::abs((FromCountry.Latitude + ToCountry.Latitude + FromCountry.Longitude + ToCountry.Longitude) *
-                      CountryPrice +
-                  Transport.power * TransportPrice);
+  return std::abs((int)FromCountry - (int)ToCountry) * this->PaymentAPI::koefficients[1] +
+         (int)Transport * this->PaymentAPI::koefficients[0];
 }

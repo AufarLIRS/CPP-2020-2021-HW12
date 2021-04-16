@@ -1,30 +1,25 @@
 #ifndef TRANSPORT_H
 #define TRANSPORT_H
-class Transport
-{
-public:
-  Transport(int power);
 
-protected:
-  Transport();
-  int power = 0;
-  friend class Delivery;
+enum class Transport
+{
+  Plane,
+  Truck,
+  Ship
 };
 
-class Plane : public Transport
+inline const char* ToString(Transport v)
 {
-public:
-  Plane();
-};
-class Truck : public Transport
-{
-public:
-  Truck();
-};
-class Ship : public Transport
-{
-public:
-  Ship();
-};
-
+  switch (v)
+  {
+    case Transport::Plane:
+      return "Plane";
+    case Transport::Truck:
+      return "Truck";
+    case Transport::Ship:
+      return "Ship";
+    default:
+      return "[Unknown]";
+  }
+}
 #endif  // TRANSPORT_H
