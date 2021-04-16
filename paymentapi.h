@@ -6,7 +6,6 @@ class PaymentAPI
 {
 public:
   PaymentAPI();
-  PaymentAPI(int n);
   std::vector<int> koefficients;
   int GetSum();
 };
