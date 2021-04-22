@@ -16,11 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    airdelivery.cpp \
+    delivery.cpp \
+    grounddelivery.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    seadelivery.cpp
 
 HEADERS += \
-    mainwindow.h
+    Enums.h \
+    airdelivery.h \
+    delivery.h \
+    grounddelivery.h \
+    mainwindow.h \
+    seadelivery.h
 
 FORMS += \
     mainwindow.ui
