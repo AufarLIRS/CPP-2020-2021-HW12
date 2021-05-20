@@ -14,8 +14,17 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+private:
+
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
+    std::vector<std::vector<std::vector<int>>> route;
+
 };
 #endif // MAINWINDOW_H
