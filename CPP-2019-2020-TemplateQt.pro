@@ -16,10 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Boat_Delivery.cpp \
+    Plane_Delivery.cpp \
+    Truck_Delivery.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Boat_Delivery.h \
+    Delivery.h \
+    Plane_Delivery.h \
+    Truck_Delivery.h \
+    continents.h \
     mainwindow.h
 
 FORMS += \
